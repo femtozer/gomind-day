@@ -17,7 +17,8 @@ class User:
 
 
 def is_major(user: User) -> bool:
-    age_min = 18 if user.country_code == "fr" else 21
     if user.age < 0:
         raise ValueError("Age must be greater than 0")
+
+    age_min = 18 if user.country_code == "fr" else 21
     return user.age >= age_min

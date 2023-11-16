@@ -1,9 +1,9 @@
+fastapi
+httpx
 pytest
 pytest-cov
 pytest-mock
-fastapi
-httpx
-sqlalchemy
 Faker
+freezegun
 black
 isort
