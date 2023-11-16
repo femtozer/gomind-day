@@ -1,0 +1,9 @@
+pytest
+pytest-cov
+pytest-mock
+fastapi
+httpx
+sqlalchemy
+Faker
+black
+isort
