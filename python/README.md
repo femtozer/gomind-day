@@ -1,3 +1,13 @@
+# Unit testing in python with pytest
+
+Create a new virtual env and activate it:
+
+```bash
+pip install virtualenv # if not already installed
+virtualenv .venv
+source .venv/bin/activate
+```
+
 Install dependencies:
 
 ```bash
@@ -25,3 +35,5 @@ Run test with coverage:
 ```bash
 pytest --cov=src --cov-report=term
 ```
+
+Pytest documentation is [here](https://docs.pytest.org/en/7.1.x/contents.html), good luck!

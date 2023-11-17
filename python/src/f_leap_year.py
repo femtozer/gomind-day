@@ -9,23 +9,23 @@ I want to know if the given year is a leap year,
 to find out if I can have a birthday party this year :D
 
 Acceptance criterias:
-Given that the year is not divisible by 4
+Given that the given year is not divisible by 4
 when I call the is_leap_year function
 then the function should return False
 
-Given that the year is divisible by 4 but not by 100
+Given that the given year is divisible by 4 but not by 100
 when I call the is_leap_year function
 then the function should return True
 
-Given that the year is divisible by 4 and by 100 but not divisible by 400
+Given that the given year is divisible by 4 and by 100 but not divisible by 400
 when I call the is_leap_year function
 then the function should return False
 
-Given that the year is divisible by 400
+Given that the given year is divisible by 400
 when I call the is_leap_year function
 then the function should return True
 
-Given that the year is zero
+Given that the given year is zero
 and Wikipedia says that year zero does not exist in Gregorian calendar (https://en.wikipedia.org/wiki/Year_zero)
 when I call the is_leap_year function
 then the function should raise a ValueError exception: Year must be different from zero
@@ -42,4 +42,4 @@ or pytest-bdd (https://pytest-bdd.readthedocs.io/en/stable/)
 
 
 def is_leap_year(year: int | None = None) -> bool:
-    pass
+    raise NotImplementedError()
