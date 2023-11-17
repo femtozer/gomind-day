@@ -8,15 +8,12 @@
  * https://jestjs.io/docs/mock-function-api#mockfnmockresolvedvaluevalue
  */
 
-import Fastify, {
-  FastifyInstance,
-  FastifyReply,
-  FastifyRequest
-} from 'fastify';
+import Fastify from 'fastify';
+import type { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
 
 import { isAdminUser } from '../lib/is-admin-user';
 
-function capitalize(word: string) {
+function capitalize(word: string): string {
   return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
@@ -29,28 +26,28 @@ export function buildApp(): FastifyInstance {
 
   fastify.get(
     '/hello/:name',
-    function (
+    async function (
       request: FastifyRequest<{ Params: { name: string } }>,
       reply: FastifyReply
     ) {
       const { name } = request.params;
-      if (capitalize(name) != name) {
-        reply
+      if (capitalize(name) === name) {
+        await reply.send({ message: `Hello ${name}!` });
+      } else {
+        await reply
           .code(400)
           .send({ detail: 'A name must starts with a capital letter' });
       }
-
-      reply.send({ message: `Hello ${name}!` });
     }
   );
 
   fastify.get('/admin/hello', async function (_, reply: FastifyReply) {
     const isAdmin = await isAdminUser();
-    if (!isAdmin) {
-      reply.code(403).send({ detail: 'User must be admin' });
+    if (isAdmin) {
+      await reply.send({ message: 'Hello Admin!' });
+    } else {
+      await reply.code(403).send({ detail: 'User must be admin' });
     }
-
-    reply.send({ message: 'Hello Admin!' });
   });
 
   return fastify;

@@ -9,11 +9,11 @@ https://fastapi.tiangolo.com/advanced/testing-dependencies/
 https://pytest-mock.readthedocs.io/en/latest/usage.html
 """
 from typing import Annotated
+
 from fastapi import FastAPI, HTTPException, Security, status
 from pydantic import BaseModel
 
 from lib.is_admin_user import is_admin_user
-
 
 app = FastAPI()
 

@@ -2,6 +2,7 @@
   "include": ["./src/**/*", "./tests/**/*", "./lib/**/*"],
   "exclude": ["node_modules"],
   "compilerOptions": {
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "strictNullChecks": true
   }
 }

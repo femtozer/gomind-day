@@ -1,5 +1,5 @@
-import time
 import random
+import time
 
 
 def is_admin_user() -> bool:

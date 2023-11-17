@@ -6,4 +6,6 @@ pytest-mock
 Faker
 freezegun
 black
+ruff
 isort
+mypy

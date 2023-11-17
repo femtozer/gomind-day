@@ -20,11 +20,11 @@ export class Cat {
       `https://api.thecatapi.com/v1/images/search?breed_ids=${this.breed}&api_key=${apiKey}`
     );
 
-    if (response.ok) {
-      const json = await response.json();
-      return json[0]['url'];
-    } else {
+    if (!response.ok) {
       throw new Error(`HTTP error ${response.status}`);
     }
+
+    const json = await response.json();
+    return json[0].url;
   }
 }
