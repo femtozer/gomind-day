@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "[*]": {
+    "editor.tabSize": 4
+  },
+  "[javascript][typescript][json]": {
+    "editor.tabSize": 2
+  }
+}

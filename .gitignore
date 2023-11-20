@@ -344,6 +344,7 @@ pyrightconfig.json
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+!.vscode/*.code-workspace
 
 # Local History for Visual Studio Code
 .history/
